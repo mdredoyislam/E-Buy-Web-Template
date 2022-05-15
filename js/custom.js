@@ -1,0 +1,69 @@
+$(document).ready(function(){
+    $('.list').click(function(){
+        const value = $(this).attr('data-filter');
+        if(value == 'All'){
+            $('.itemBox').show(1000);
+        }else{
+            $('.itemBox').not('.'+value).hide(1000);
+            $('.itemBox').filter('.'+value).show(1000);
+        }
+    });
+    //add active class and Remove Active Class
+    $('.list').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+
+    $('.slider').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        nav:true,
+        dots:true,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            600:{
+                items:1,
+            },
+            1000:{
+                items:1,
+            }
+        }
+    })
+    $('.latest-slider').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        dots: false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    })
+    $('.testimonials-slide').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        dots: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:2
+            }
+        }
+    })
+});
